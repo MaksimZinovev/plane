@@ -5,7 +5,11 @@ import dotenv from 'dotenv';
  * Read environment variables from file.
  * https://github.com/motdotla/dotenv
  */
-dotenv.config();
+const result = dotenv.config();
+if (result.error) {
+  throw result.error
+}
+
 // require('dotenv').config();
 
 /**
