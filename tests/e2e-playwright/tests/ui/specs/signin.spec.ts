@@ -20,17 +20,17 @@ test.describe("Sign in page", () => {
     await signInPage.checkSignInPageVisual();
   });
 
-  test.skip("user can sign in with valid credentials", async ({page}) => {
+  test.only("user can sign in with valid credentials", async ({page}) => {
 
-    console.log("USERNAME");
-    await signInPage.fillEmail("USERNAME");
-    await signInPage.fillPassword('password123');
+    // console.log('captain@plane.so');
+    await signInPage.fillEmail(process.env.USERNAME as string);
+    await signInPage.fillPassword(process.env.PASSWORD as string);
     await signInPage.clickSignInButton();
 
     const dashbordPage = page;
     // Visual check for the sign in page
-    await dashbordPage.waitForURL(/alpha/, {timeout: 10000});
-    await expect(dashbordPage).toHaveURL(/alpha/);
+    await dashbordPage.waitForURL(/beta/, {timeout: 10000});
+    await expect(dashbordPage).toHaveURL(/beta/);
     await expect(dashbordPage.getByRole('main').getByText(/dashboard/i)).toBeVisible();
   });
 });
