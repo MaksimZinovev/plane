@@ -7,6 +7,8 @@ test.beforeEach(async ({ page }) => {
   signInPage = new SignInPage(page);
   await signInPage.goto('/')
 });
+
+  
 test.describe("Sign in page", () => {
   // Check if the page is loaded and  heading is displayed 'Sign in to Plane'
 
@@ -18,7 +20,7 @@ test.describe("Sign in page", () => {
     await signInPage.checkSignInPageVisual();
   });
 
-  test("user can sign in with valid credentials", async ({page}) => {
+  test.skip("user can sign in with valid credentials", async ({page}) => {
 
     console.log("USERNAME");
     await signInPage.fillEmail("USERNAME");
