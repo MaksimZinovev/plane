@@ -1,10 +1,11 @@
 import { test, expect, type Page } from "@playwright/test";
 import { SignInPage } from '../../ui/pages/signin-page';
+import { DashboardPage } from '../../ui/pages/dashboard-page';
 
 let signInPage: SignInPage;
 
 test.beforeEach(async ({ page }) => {
-  signInPage = new SignInPage(page);
+  const signInPage = new SignInPage(page);
   await signInPage.goto('/')
 });
 
@@ -27,10 +28,9 @@ test.describe("Sign in page", () => {
     await signInPage.fillPassword(process.env.PASSWORD!);
     await signInPage.clickSignInButton();
 
-    const dashbordPage = page;
-    // Visual check for the sign in page
-    await dashbordPage.waitForURL(/beta/, { timeout: 10000 });
-    await expect(dashbordPage).toHaveURL(/beta/);
-    await expect(dashbordPage.getByRole('main').getByText(/dashboard/i)).toBeVisible();
+    const dashboardPage = new DashboardPage(page);
+    // Check title of dashboard page
+    await dashboardPage.checkUrl();
+    await dashboardPage.checkHeading();
   });
 });

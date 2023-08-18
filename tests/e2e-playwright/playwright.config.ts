@@ -1,10 +1,9 @@
 import { defineConfig, devices } from '@playwright/test';
-// import path from 'path';
+import path from 'path';
 import dotenv from 'dotenv';
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
+
+export const STORAGE_STATE = path.join(__dirname, './storageState.json');
+
 const result = dotenv.config();
 if (result.error) {
   throw result.error
@@ -26,7 +25,7 @@ export default defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : 3,
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  reporter:  [['html'], ['list']],
+  reporter: [['html'], ['list']],
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
@@ -40,8 +39,13 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: 'chromium',
+      name: 'setup',
+      testMatch: /global-setup\.ts/
+    },
+    {
+      name: 'chrome',
       use: { ...devices['Desktop Chrome'] },
+      dependencies: ['setup']
     },
 
     // {
