@@ -44,7 +44,10 @@ export default defineConfig({
     },
     {
       name: 'chrome',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+        storageState: STORAGE_STATE
+      },
       dependencies: ['setup']
     },
 

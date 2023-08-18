@@ -31,11 +31,11 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 ## 3. Risk Analysis
 
 ## 4. Exploratory testing
-
-- [exploratory.md](./tests/exploratory/exploratory.md)
   
 ## 5. Unit testing
 
 ## 6. API testing with Postman
 
 ## 7. UI testing with Playwright Typescript
+
+- [e2e-testing.md](./tests/e2e-playwright/e2e-testing)
