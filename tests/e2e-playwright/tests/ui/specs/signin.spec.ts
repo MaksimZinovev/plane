@@ -23,7 +23,7 @@ test.describe("Sign in page", () => {
     await signInPage.checkSignInPageVisual();
   });
 
-  test.only("user can sign in with valid credentials", async ({ page }) => {
+  test("user can sign in with valid credentials", async ({ page }) => {
 
     // console.log('captain@plane.so');
     await signInPage.fillEmail(process.env.USERNAME!);
