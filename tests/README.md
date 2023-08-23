@@ -4,7 +4,8 @@
 
 The project folder has the following structure:
 
-```- tests
+```
+- tests
   - api
   - data
   - setup
@@ -19,13 +20,13 @@ The project folder has the following structure:
 
 Change directory:
 
-```
+```shell
 cd tests/e2e-playwright
 ```
 
 Install dependencies:
 
-```
+```shell
 npm -i 
 ```
 
