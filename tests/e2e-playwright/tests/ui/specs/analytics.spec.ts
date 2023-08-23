@@ -15,7 +15,7 @@ test.describe("analytics page", () => {
       await analyticsPage.checkHeading();
     });
     await test.step("analytics page visual check", async () => {
-      await analyticsPage.checkAnalyticsPageVisual();
+      await analyticsPage.checkPageVisual();
     });
 
   });
