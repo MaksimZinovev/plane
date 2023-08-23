@@ -1,21 +1,21 @@
 import { test, expect, type Page } from "@playwright/test";
-import { ProjectsPage } from '../pages/my-issues-page';
+import { MyIssuesPage } from '../pages/my-issues-page';
 
-let projectsPage: ProjectsPage;
+let myIssuesPage: MyIssuesPage;
 
 test.beforeEach(async ({ page }) => {
-  projectsPage = new ProjectsPage(page);
-  await projectsPage.goto();
+  myIssuesPage = new MyIssuesPage(page);
+  await myIssuesPage.goto();
 });
 
-test.describe("Projects page", () => {
-  test("check projects page @smoke", async () => {
-    await test.step("check projects page title @smoke", async () => {
-      await projectsPage.checkUrl();
-      await projectsPage.checkHeading();
+test.describe("my issues page", () => {
+  test("check 'my issues' page @smoke", async () => {
+    await test.step("check 'my issuess page title @smoke", async () => {
+      await myIssuesPage.checkUrl();
+      await myIssuesPage.checkHeading();
     });
-    await test.step("projects page visual check", async () => {
-      await projectsPage.checkProjectsPageVisual();
+    await test.step("'my issues'page visual check", async () => {
+      await myIssuesPage.checkPageVisual();
     });
 
   });

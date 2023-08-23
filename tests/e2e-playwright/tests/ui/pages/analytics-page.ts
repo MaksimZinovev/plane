@@ -27,7 +27,7 @@ export class AnalyticsPage {
         await expect(this.heading).toBeVisible();
     }
 
-    async checkAnalyticsPageVisual() {
+    async checkPageVisual() {
         await expect(this.page).toHaveScreenshot({ fullPage: true });
     }
 }
