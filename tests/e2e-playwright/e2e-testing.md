@@ -1,5 +1,9 @@
 # End-2-End Testing with Playwright
 
+## Tests 
+
+Tests can be found in `tests/e2e-playwright`
+
 ## Concepts and techniques practiced  
 
 - [x] Page Object Model (POM) [Page object models | Playwright](https://playwright.dev/docs/pom)

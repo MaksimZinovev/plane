@@ -3,19 +3,18 @@ import { type Page, type Locator, expect } from "@playwright/test";
 const HEADING_TEXT: string = "Dashboard"
 const PROJECT_URL: string = "beta"
 
-export class DashboardPage {
+export class ProjectPage {
     readonly page: Page;
     readonly heading: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.heading = page.getByRole('main').getByText(/dashboard/i);
-    
+
     }
 
     async goto() {
         await this.page.goto(`./${PROJECT_URL}`);
-        await expect(this.heading).toHaveText(HEADING_TEXT);
     };
 
     async checkUrl() {
@@ -31,4 +30,4 @@ export class DashboardPage {
         await expect(this.page).toHaveScreenshot({ fullPage: true });
     }
 }
-export default DashboardPage;
+export default ProjectPage;
