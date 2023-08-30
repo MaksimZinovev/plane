@@ -9,10 +9,13 @@ export class ProjectsPage {
     readonly heading: Locator;
     readonly workspaceName: string;
 
-    constructor(page: Page, workspaceName: string) {
+    constructor(
+        page: Page,
+        workspaceName: string = PROJECTS_DEFAULT_WORKSPACE
+    ) {
         this.page = page;
-        this.workspaceName =  PROJECTS_DEFAULT_WORKSPACE;
-        this.heading = page.getByText(toUpperCaseFirstLetter(this.workspaceName) +' Projects');
+        this.workspaceName = workspaceName;
+        this.heading = page.getByText(toUpperCaseFirstLetter(this.workspaceName) + ' Projects');
         console.log(`this.workspaceName: ${this.workspaceName}`)
     }
 
@@ -21,7 +24,7 @@ export class ProjectsPage {
     };
 
     async checkUrl() {
-        await expect(this.page ).toHaveURL(`${this.workspaceName}/${PROJECTS_PATH}`);
+        await expect(this.page).toHaveURL(`${this.workspaceName}/${PROJECTS_PATH}`);
     }
     async checkHeading() {
         await expect(this.heading).toBeVisible();

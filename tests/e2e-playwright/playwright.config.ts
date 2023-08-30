@@ -4,8 +4,10 @@ import dotenv from 'dotenv';
 
 export const STORAGE_STATE: string = path.join(__dirname, './storageState.json');
 export const PROJECT_NAME: string = 'Airbus';
+export const PROJECT_PATH: string = 'projects';
 export const WORKSPACE_NAME: string = 'beta';
-export const ISSUE_PATH: string = WORKSPACE_NAME + '/projects';
+export const ISSUE_ID: string = '7c15c65c-0bd0-497b-979d-7b705c06dfcb/issues/db243181-3be0-444a-97be-88bd92fe8754';
+
 
 const result = dotenv.config();
 if (result.error) {
@@ -33,8 +35,8 @@ export default defineConfig({
     video: 'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    // headless: false,
-    headless: true,
+    headless: false,
+    // headless: true,
   },
 
   /* Configure projects for major browsers */
