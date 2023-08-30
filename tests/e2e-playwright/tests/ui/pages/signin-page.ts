@@ -1,4 +1,5 @@
 import { type Page, type Locator, expect } from "@playwright/test";
+import { expectScreenshot } from "../../utils/utils";
 const HEADING_TEXT: string = 'Sign in to Plane';
 
 
@@ -32,7 +33,8 @@ export class SignInPage {
     }
 
     async checkSignInPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+        // await expect(this.page).toHaveScreenshot({ fullPage: true });
+        await expectScreenshot(this.page);
     }
 
     async fillEmail(email: string) {

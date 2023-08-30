@@ -1,5 +1,5 @@
 import { type Page, type Locator, expect } from "@playwright/test";
-
+import { expectScreenshot, toUpperCaseFirstLetter } from "../../utils/utils";
 
 const PROJECTS_PATH: string = "projects";
 const PROJECTS_DEFAULT_WORKSPACE: string = "beta";
@@ -9,10 +9,10 @@ export class ProjectsPage {
     readonly heading: Locator;
     readonly workspaceName: string;
 
-    constructor(page: Page, workspaceName?: string) {
+    constructor(page: Page, workspaceName: string) {
         this.page = page;
-        this.workspaceName = workspaceName ? workspaceName : PROJECTS_DEFAULT_WORKSPACE;
-        this.heading = page.getByText(this.workspaceName.charAt(0).toUpperCase() + this.workspaceName.slice(1)+' Projects');
+        this.workspaceName =  PROJECTS_DEFAULT_WORKSPACE;
+        this.heading = page.getByText(toUpperCaseFirstLetter(this.workspaceName) +' Projects');
         console.log(`this.workspaceName: ${this.workspaceName}`)
     }
 
@@ -28,7 +28,7 @@ export class ProjectsPage {
     }
 
     async checkProjectsPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+        await expectScreenshot(this.page);
     }
 }
 export default ProjectsPage;

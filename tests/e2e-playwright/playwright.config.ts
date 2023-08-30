@@ -2,9 +2,10 @@ import { defineConfig, devices } from '@playwright/test';
 import path from 'path';
 import dotenv from 'dotenv';
 
-export const STORAGE_STATE = path.join(__dirname, './storageState.json');
-export const PROJECT_NAME = 'Airbus'
-export const WORKSPACE_NAME = 'beta'
+export const STORAGE_STATE: string = path.join(__dirname, './storageState.json');
+export const PROJECT_NAME: string = 'Airbus';
+export const WORKSPACE_NAME: string = 'beta';
+export const ISSUE_PATH: string = WORKSPACE_NAME + '/projects';
 
 const result = dotenv.config();
 if (result.error) {
