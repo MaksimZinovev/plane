@@ -1,34 +1,37 @@
 import { type Page, type Locator, expect } from "@playwright/test";
+import { expectScreenshot } from "../../utils/utils";
+import { WORKSPACE_NAME, ISSUE_ID, PROJECT_PATH } from "../../../playwright.config";
 
 
-const PROJECTS_PATH: string = "projects";
-const PROJECTS_DEFAULT_WORKSPACE: string = "beta";
-
-export class ProjectsPage {
+export class NotificationsPopover {
     readonly page: Page;
-    readonly heading: Locator;
-    readonly workspaceName: string;
+    readonly popover: Locator;
+    readonly notificationsHeading: Locator;
+    readonly closeButton: Locator;
 
-    constructor(page: Page, workspaceName?: string) {
+    constructor(page: Page) {
         this.page = page;
-        this.workspaceName = workspaceName ? workspaceName : PROJECTS_DEFAULT_WORKSPACE;
-        this.heading = page.getByText(this.workspaceName.charAt(0).toUpperCase() + this.workspaceName.slice(1)+' Projects');
-        console.log(`this.workspaceName: ${this.workspaceName}`)
+        this.popover = page.locator("[id*='popover-panel']");
+        this.notificationsHeading = this.popover.getByRole('heading', { name: 'Notifications', exact: true });
+        this.closeButton = this.popover.getByRole('button', { name: 'close' });
     }
 
-    async goto() {
-        await this.page.goto(`./${this.workspaceName}/${PROJECTS_PATH}`);
+    async close() {
+        await this.closeButton.click();
     };
 
-    async checkUrl() {
-        await expect(this.page ).toHaveURL(`${this.workspaceName}/${PROJECTS_PATH}`);
-    }
-    async checkHeading() {
-        await expect(this.heading).toBeVisible();
+
+
+    async checkPopoverVisible() {
+        await expect(this.popover).toBeVisible();
     }
 
-    async checkProjectsPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+    async checkPopoverNotVisible() {
+        await expect(this.popover).not.toBeVisible();
+    }
+
+    async checkPopoverVisual(maxDiffPixelRatio: number = 0.02) {
+        await expect(this.popover).toHaveScreenshot({ maxDiffPixelRatio: maxDiffPixelRatio });
     }
 }
-export default ProjectsPage;
+export default NotificationsPopover;
