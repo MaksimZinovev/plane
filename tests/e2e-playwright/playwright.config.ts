@@ -3,6 +3,8 @@ import path from 'path';
 import dotenv from 'dotenv';
 
 export const STORAGE_STATE = path.join(__dirname, './storageState.json');
+export const PROJECT_NAME = 'Airbus'
+export const WORKSPACE_NAME = 'beta'
 
 const result = dotenv.config();
 if (result.error) {
@@ -30,7 +32,8 @@ export default defineConfig({
     video: 'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    headless: false,
+    // headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */

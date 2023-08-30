@@ -1,17 +1,19 @@
 import { type Page, type Locator, expect } from "@playwright/test";
-
+import { expectScreenshot } from "../../utils/utils";
+import { WORKSPACE_NAME } from "../../../playwright.config";
 
 const ANALYTICS_PATH: string = "analytics";
-const PROJECTS_DEFAULT_WORKSPACE: string = "beta";
+
 
 export class AnalyticsPage {
     readonly page: Page;
     readonly heading: Locator;
-    readonly workspaceName: string;
+    readonly workspaceName: string = WORKSPACE_NAME;
 
-    constructor(page: Page, workspaceName?: string) {
+    constructor(page: Page,
+        workspaceName: string = WORKSPACE_NAME) {
         this.page = page;
-        this.workspaceName = workspaceName ? workspaceName : PROJECTS_DEFAULT_WORKSPACE;
+        this.workspaceName = workspaceName;
         this.heading = page.getByText('Workspace Analytics');
 
     }
@@ -28,7 +30,7 @@ export class AnalyticsPage {
     }
 
     async checkPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+        await expectScreenshot(this.page);
     }
 }
 export default AnalyticsPage;

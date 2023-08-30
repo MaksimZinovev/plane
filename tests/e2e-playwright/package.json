@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test:all": "npx playwright test",
+    "test:all-headless": "npx playwright test --headless",
     "test:report": "npx playwright show-report"
   },
   "keywords": [],
