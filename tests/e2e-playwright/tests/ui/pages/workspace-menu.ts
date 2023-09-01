@@ -18,23 +18,28 @@ export const buttons = {
 
 export class WorkspaceMenu {
     readonly page: Page;
-    readonly notificationsButton: Locator;
-    readonly dashboardButton: Locator;
-    readonly analyticsButton: Locator;
-    readonly projectsButton: Locator;
-    readonly myIssuesButton: Locator;
+    readonly workspaceButton: Locator;
     readonly buttons: typeof buttons;
+    readonly workspaceSettingsButton: Locator;
 
     constructor(page: Page) {
         this.page = page;
         this.buttons = buttons;
+        this.workspaceButton = page.getByRole('button');
+        this.workspaceSettingsButton = page.getByRole('link', { name: 'Workspace Settings' });
     }
 
     async clickButton(buttonKey: ButtonKey) {
         await this.page.getByRole('button', { name: this.buttons[buttonKey] }).click();
     };
 
+    async clickWorkspaceMenuButton(workspaceName: RegExp) {
+        await this.workspaceButton.getByText(workspaceName).click();
+    };
 
+    async clickWorkspaceSettingsButton() {
+        await this.workspaceSettingsButton.click();
+    };
 
     async checkPopoverVisual() {
         await expectScreenshot(this.page);
