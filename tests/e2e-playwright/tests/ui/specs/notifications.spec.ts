@@ -26,6 +26,7 @@ test.describe("notifications page", () => {
       await notificationsPopover.checkPopoverVisual();
     });
   });
+
   test("check notifications popover not visible", async () => {
     await notificationsPopover.close();
     await notificationsPopover.checkPopoverNotVisible();
