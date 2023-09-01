@@ -15,7 +15,8 @@ test.beforeEach(async ({ page }) => {
 
   workspaceMenu = new WorkspaceMenu(page);
   await workspaceMenu.clickWorkspaceMenuButton(new RegExp(WORKSPACE_NAME, 'i'));
-  await workspaceMenu.clickWorkspaceSettingsButton();
+  // await workspaceMenu.clickWorkspaceSettingsButton();
+  await workspaceMenu.clickLink('workspace settings');
   workspaceSettingsPage = new WorkspaceSettingsPage(page);
 });
 

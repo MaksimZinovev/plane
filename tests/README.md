@@ -1,4 +1,4 @@
-# Plane App Testing
+# Plane App Testing with Playwright
 
 ## About
 

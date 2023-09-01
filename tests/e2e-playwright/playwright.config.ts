@@ -15,6 +15,8 @@ if (result.error) {
 }
 
 export default defineConfig({
+  outputDir: './test-results',
+  timeout: 1 * 10000,
   testDir: './tests',
   /* Run tests in files in parallel 
   fullyParallel: true,
