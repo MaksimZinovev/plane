@@ -1,5 +1,6 @@
 import { type Page, type Locator, expect } from "@playwright/test";
 import { WORKSPACE_NAME } from "../../../playwright.config";
+import { expectScreenshot } from "../../utils/utils";
 
 const HEADING_TEXT: string = "Dashboard"
 
@@ -15,7 +16,7 @@ export class DashboardPage {
     }
 
     async goto() {
-        await this.page.goto(`./${WORKSPACE_NAME}`);
+        await this.page.goto(`${WORKSPACE_NAME}`);
         await expect(this.heading).toHaveText(HEADING_TEXT);
     };
 
@@ -28,8 +29,8 @@ export class DashboardPage {
         await expect(this.heading).toHaveText(HEADING_TEXT);
     }
 
-    async checkDashboardPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+    async checkPageVisual() {
+        await expectScreenshot(this.page);
     }
 }
 export default DashboardPage;

@@ -8,7 +8,9 @@ type Fixtures = {
 
 export const test = base.extend<Fixtures>({
     dashboardPage: async ({ page }, use) => {
-        await use(new DashboardPage(page));
+        const dashboardPage = new DashboardPage(page);
+        await dashboardPage.goto();
+        await use(dashboardPage);
     }
 });
 

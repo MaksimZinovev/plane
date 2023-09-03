@@ -1,4 +1,5 @@
 import { type Page, type Locator, expect } from "@playwright/test";
+import { expectScreenshot } from "../../utils/utils";
 
 
 const MY_ISSUES_PATH: string = "me/my-issues";
@@ -28,7 +29,7 @@ export class MyIssuesPage {
     }
 
     async checkPageVisual() {
-        await expect(this.page).toHaveScreenshot({ fullPage: true });
+        await expectScreenshot(this.page);
     }
 }
 export default MyIssuesPage;

@@ -37,8 +37,8 @@ export default defineConfig({
     video: 'retain-on-failure',
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
     trace: 'retain-on-failure',
-    headless: false,
-    // headless: true,
+    // headless: false,
+    headless: true,
   },
 
   /* Configure projects for major browsers */

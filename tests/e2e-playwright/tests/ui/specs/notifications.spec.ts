@@ -1,4 +1,4 @@
-import { test, expect } from "../fixtures/dashboard-fixture";
+import { test } from "../fixtures/dashboard-fixture";
 import { NotificationsPopover } from '../pages/notifications-popover';
 import { WorkspaceMenu } from '../pages/workspace-menu';
 
@@ -8,7 +8,6 @@ let workspaceMenu: WorkspaceMenu;
 test.beforeEach(async ({ page, dashboardPage }) => {
   workspaceMenu = new WorkspaceMenu(page);
   notificationsPopover = new NotificationsPopover(page);
-  await dashboardPage.goto();
   await dashboardPage.checkHeading();
   await workspaceMenu.clickButton('notifications');
 });

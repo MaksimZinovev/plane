@@ -1,9 +1,8 @@
-import { test, expect } from '../fixtures/dashboard-fixture';
+import { test } from '../fixtures/dashboard-fixture';
 
 
 
 test.beforeEach(async ({ dashboardPage }) => {
-  await dashboardPage.goto();
   await dashboardPage.checkHeading();
 });
 
@@ -13,7 +12,7 @@ test.describe("Dashboard page", () => {
       await dashboardPage.checkHeading();
     });
     await test.step("dashboard page visual check", async () => {
-      await dashboardPage.checkDashboardPageVisual();
+      await dashboardPage.checkPageVisual();
     });
   });
   test("check dashboard page test", async ({ dashboardPage }) => {

@@ -1,5 +1,8 @@
-import { test, expect } from "../fixtures/dashboard-fixture";;
+import { test } from "../fixtures/dashboard-fixture";;
 import { SignInPage } from '../../ui/pages/signin-page';
+import { DashboardPage } from '../../ui/pages/dashboard-page';
+
+let dashboardPage: DashboardPage;
 
 let signInPage: SignInPage;
 
@@ -22,13 +25,13 @@ test.describe("Sign in page", () => {
     await signInPage.checkSignInPageVisual();
   });
 
-  test("user can sign in with valid credentials", async ({ page, dashboardPage }) => {
-
+  test("user can sign in with valid credentials @repeat", async ({ page }) => {
     // console.log('captain@plane.so');
     await signInPage.fillEmail(process.env.USERNAME!);
     await signInPage.fillPassword(process.env.PASSWORD!);
     await signInPage.clickSignInButton();
-
+    
+    dashboardPage = new DashboardPage(page);
     // Check title of dashboard page
     await dashboardPage.checkUrl();
     await dashboardPage.checkHeading();

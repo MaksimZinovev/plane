@@ -1,4 +1,4 @@
-import { test, expect, type Page } from "@playwright/test";
+import { test } from "@playwright/test";
 import { IssuePage } from '../pages/issue-page';
 
 let issuePage: IssuePage;

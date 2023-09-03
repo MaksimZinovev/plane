@@ -1,4 +1,4 @@
-import { test, expect  } from "../fixtures/dashboard-fixture";;
+import { test } from "../fixtures/dashboard-fixture";;
 import { WorkspaceMenu } from '../pages/workspace-menu';
 import { WORKSPACE_NAME } from "../../../playwright.config";
 import { WorkspaceSettingsPage } from "../pages/workspace-settings-page";
@@ -8,8 +8,6 @@ let workspaceMenu: WorkspaceMenu;
 
 
 test.beforeEach(async ({ page, dashboardPage }) => {
-  await dashboardPage.goto();
-
   workspaceMenu = new WorkspaceMenu(page);
   await workspaceMenu.clickWorkspaceMenuButton(new RegExp(WORKSPACE_NAME, 'i'));
   // await workspaceMenu.clickWorkspaceSettingsButton();
