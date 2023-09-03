@@ -40,16 +40,22 @@ The following techniques and approaches where used:
 - [x] Fixtures
 - [x] Project setup and StorageSession
 - [x] Locators with prioritized user-facing attributes
-- [x] API testing / interactions
+- [ ] API testing / interactions
 - [x] Visual testing
+- [ ] Continuous testing with Azure Pipelines
+- [ ] Add multiple environments
+- [ ] Parametrize and improve pipeline
+- [ ] Deploy Plane app using Azure services
+- [ ] Run full pipeline (build, deploy, test)
 
 Progress
 
 - [x] Smoke test
 - [x] Refactor using POM
-- [ ] Refactor with fixtures
-- [ ] Feature 1
-- [ ] Feature 2
+- [x] Refactor with fixtures
+- [ ] Create automation test plan
+- [ ] Automate tests Feature 1
+- [ ] Automate tests Feature 2
 - [ ] Manage state using API
 - [ ] Create Azure pipeline
 
