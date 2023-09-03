@@ -1,5 +1,7 @@
 # Plane App Testing with Playwright
 
+[![Test Results](https://img.shields.io/badge/tests-passing-brightgreen)](https://clickworks.me/public_reports/test-results.xml)  
+[Click to View Test Results HTML Report](https://clickworks.me/public_reports/index.html)
 ## About
 
 This test suite is built using Playwright and TypeScript, offering a robust and efficient solution for browser automation. Playwright's cross-browser capabilities ensure comprehensive test coverage.
