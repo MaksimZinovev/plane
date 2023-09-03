@@ -1,16 +1,14 @@
-import { test, expect } from "@playwright/test";
-import { DashboardPage } from '../pages/dashboard-page';
+import { test, expect } from '../fixtures/dashboard-fixture';
 
-let dashboardPage: DashboardPage;
 
-test.beforeEach(async ({ page }) => {
-  dashboardPage = new DashboardPage(page);
+
+test.beforeEach(async ({ dashboardPage }) => {
   await dashboardPage.goto();
   await dashboardPage.checkHeading();
 });
 
 test.describe("Dashboard page", () => {
-  test("check dashboard page", async () => {
+  test("check dashboard page", async ({ dashboardPage }) => {
     await test.step("user can open dashboard page", async () => {
       await dashboardPage.checkHeading();
     });
@@ -18,8 +16,8 @@ test.describe("Dashboard page", () => {
       await dashboardPage.checkDashboardPageVisual();
     });
   });
-  test("check dashboard page test", async ({ page}) => {
-    await expect(page).toHaveURL(/beta/);
+  test("check dashboard page test", async ({ dashboardPage }) => {
+    await dashboardPage.checkUrl();
 
   });
 });

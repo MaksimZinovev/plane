@@ -1,14 +1,12 @@
-import { test, expect, type Page, Locator } from "@playwright/test";
-import { DashboardPage } from '../pages/dashboard-page';
+import { test, expect } from "../fixtures/dashboard-fixture";
 import ProjectSettingsPage from "../pages/project-settings-page";
 import ProjectsMenu from "../pages/projects-menu";
 
-let dashboardPage: DashboardPage;
+
 let projectsMenu: ProjectsMenu;
 let projectSettingsPage: ProjectSettingsPage;
 
-test.beforeEach(async ({ page }) => {
-  dashboardPage = new DashboardPage(page);
+test.beforeEach(async ({ page, dashboardPage }) => {
   projectsMenu = new ProjectsMenu(page);
   await dashboardPage.goto();
   await projectsMenu.clickProjectButton(1);

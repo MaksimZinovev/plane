@@ -1,14 +1,11 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures/dashboard-fixture";
 import { NotificationsPopover } from '../pages/notifications-popover';
-import { DashboardPage } from '../pages/dashboard-page';
 import { WorkspaceMenu } from '../pages/workspace-menu';
 
 let notificationsPopover: NotificationsPopover;
-let dashboardPage: DashboardPage;
 let workspaceMenu: WorkspaceMenu;
 
-test.beforeEach(async ({ page }) => {
-  dashboardPage = new DashboardPage(page);
+test.beforeEach(async ({ page, dashboardPage }) => {
   workspaceMenu = new WorkspaceMenu(page);
   notificationsPopover = new NotificationsPopover(page);
   await dashboardPage.goto();

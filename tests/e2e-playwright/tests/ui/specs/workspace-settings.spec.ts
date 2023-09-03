@@ -1,16 +1,13 @@
-import { test, expect, type Page, Locator } from "@playwright/test";
+import { test, expect  } from "../fixtures/dashboard-fixture";;
 import { WorkspaceMenu } from '../pages/workspace-menu';
 import { WORKSPACE_NAME } from "../../../playwright.config";
-import DashboardPage from "../pages/dashboard-page";
 import { WorkspaceSettingsPage } from "../pages/workspace-settings-page";
 
 let workspaceSettingsPage: WorkspaceSettingsPage;
 let workspaceMenu: WorkspaceMenu;
-let dashboardPage: DashboardPage;
 
 
-test.beforeEach(async ({ page }) => {
-  dashboardPage = new DashboardPage(page);
+test.beforeEach(async ({ page, dashboardPage }) => {
   await dashboardPage.goto();
 
   workspaceMenu = new WorkspaceMenu(page);

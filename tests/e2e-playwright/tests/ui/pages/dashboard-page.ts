@@ -1,7 +1,8 @@
 import { type Page, type Locator, expect } from "@playwright/test";
+import { WORKSPACE_NAME } from "../../../playwright.config";
 
 const HEADING_TEXT: string = "Dashboard"
-const PROJECT_URL: string = "beta"
+
 
 export class DashboardPage {
     readonly page: Page;
@@ -14,11 +15,11 @@ export class DashboardPage {
     }
 
     async goto() {
-        await this.page.goto(`./${PROJECT_URL}`);
+        await this.page.goto(`./${WORKSPACE_NAME}`);
         await expect(this.heading).toHaveText(HEADING_TEXT);
     };
 
-    async checkUrl() {
+    async checkUrl(url: string = WORKSPACE_NAME) {
         await this.page.waitForURL(/beta/, { timeout: 10000 });
         await expect(this.page).toHaveURL(/beta/);
     }
