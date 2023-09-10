@@ -1,5 +1,14 @@
 # Plane App Testing
 
+<p> 
+    <a href="https://app.plane.so/#gh-light-mode-only" target="_blank">
+      <img align="center"
+        src="https://plane-marketing.s3.ap-south-1.amazonaws.com/plane-readme/plane_screen.webp"
+        alt="Plane Screens"
+        width="80%"
+      />
+    </a>
+
 ## About
 
 This is a project where I used open-source app 'Plane' to practice testing. Plane is a software development tool to manage issues, sprints, and product roadmaps (Jira alternative).
