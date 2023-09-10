@@ -28,6 +28,8 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 
 ## 2. Test planning and test strategy
 
+- [Plane App Test Strategy (docx)](https://github.com/MaksimZinovev/plane/tree/test-planning/tests/test-planning/attachments)
+
 ## 3. Risk Analysis
 
 ## 4. Exploratory testing
