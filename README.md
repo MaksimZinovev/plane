@@ -33,12 +33,17 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 ## 3. Risk Analysis
 
 ## 4. Exploratory testing
-  
-## 5. Unit testing
 
-## 6. API testing with Postman
+## 5. Defect management
 
-## 7. UI testing with Playwright Typescript
+Azure DevOps Project bug reports demo:
 
-- [code](./tests/e2e-playwright/e2e-testing.md)
-- [readme](./tests/README.md)
+- [bug reports](https://dev.azure.com/makszin/BugReportDemo/_workitems/recentlyupdated/)
+
+## 6. Unit testing
+
+## 7. API testing with Postman
+
+## 8. UI testing with Playwright Typescript
+
+- [code](https://github.com/MaksimZinovev/plane/blob/playwright-tests/tests/e2e-playwright/e2e-testing.md)
