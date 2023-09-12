@@ -38,7 +38,7 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 
 Azure DevOps Project bug reports demo:
 
-- [bug reports](https://dev.azure.com/makszin/BugReportDemo/_workitems/recentlyupdated/)
+- [Bug reports](https://dev.azure.com/makszin/BugReportDemo/_workitems/recentlyupdated/)
 
 ## 6. Unit testing
 
