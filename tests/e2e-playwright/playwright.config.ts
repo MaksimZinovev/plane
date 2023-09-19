@@ -45,12 +45,15 @@ export default defineConfig({
   projects: [
     {
       name: 'setup',
-      testMatch: /global-setup\.ts/
+      testMatch: /global-setup\.ts/,
+      use: {
+        ...devices['Desktop Firefox'],
+      }
     },
     {
-      name: 'chrome',
+      name: 'firefox',
       use: {
-        ...devices['Desktop Chrome'],
+        ...devices['Desktop Firefox'],
         storageState: STORAGE_STATE
       },
       dependencies: ['setup']
