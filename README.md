@@ -34,16 +34,20 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 
 ## 4. Exploratory testing
 
-## 5. Defect management
+## 5. Test Case Management
+
+## 6. Defect management
 
 Azure DevOps Project bug reports demo:
 
 - [Bug reports](https://dev.azure.com/makszin/BugReportDemo/_workitems/recentlyupdated/)
 
-## 6. Unit testing
+## 7. Reporting
 
-## 7. API testing with Postman
+## 8. Unit testing
 
-## 8. UI testing with Playwright Typescript
+## 9. API testing with Postman
 
-- [code](https://github.com/MaksimZinovev/plane/blob/playwright-tests/tests/e2e-playwright/e2e-testing.md)
+## 10. UI testing with Playwright Typescript
+
+- [Code](https://github.com/MaksimZinovev/plane/blob/playwright-tests/tests/e2e-playwright/e2e-testing.md)
