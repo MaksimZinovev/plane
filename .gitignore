@@ -72,3 +72,5 @@ package-lock.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
 .aider*
+
+tests/e2e-playwright
