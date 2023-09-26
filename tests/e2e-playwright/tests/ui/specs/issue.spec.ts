@@ -3,7 +3,6 @@ import { IssuePage } from '../pages/issue-page';
 import hooks from '../../utils/hooks';
 import pages from "../../utils/pages";
 import { ISSUE_ID, PROJECT_ID, WORKSPACE_NAME } from "../../../playwright.config";
-import uiPages from "../../utils/uiPages";
 
 
 
@@ -20,8 +19,6 @@ test.beforeEach(async ({ page }) => {
   if (pageInstance instanceof IssuePage) {
     issuePage = pageInstance;
   }
-  // issuePage = new IssuePage(page);
-  // await issuePage.goto();
 });
 
 test.describe("Issue page", () => {
@@ -33,7 +30,6 @@ test.describe("Issue page", () => {
     await test.step("full page visual check", async () => {
       await issuePage.checkPageVisual();
     });
-
   });
 
 });

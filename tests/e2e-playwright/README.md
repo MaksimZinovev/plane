@@ -59,6 +59,7 @@ Progress
 - [x] Refactor tests using POM
 - [x] Refactor test for Dashboard using fixture
 - [x] Implement locators with prioritized user-facing attributes
+- [ ] Refactortests: add hooks with Dynamic Page Objects
 - [ ] Implement API testing / interactions
 - [ ] Create Azure CI/CD Pipeline for continuous testing
 - [ ] Add multiple environments
