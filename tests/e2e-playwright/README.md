@@ -17,7 +17,7 @@ The project has the following structure:
 
 ```bash
 .
-├── e2e-testing.md
+├── README.md
 ├── node_modules
 ├── package-lock.json
 ├── package.json
@@ -43,36 +43,29 @@ The project has the following structure:
 
 The following techniques and approaches where used:
 
-- [x] Page Object Model (POM)
-- [x] Fixtures
-- [x] Project setup and StorageSession
-- [x] Locators with prioritized user-facing attributes
-- [ ] API testing / interactions
-- [x] Visual testing
-- [ ] Continuous testing with Azure Pipelines
+Progress
+
+- [x] Clone Plane repo and launch application locally via Docker
+- [x] Install Dbeaver app and get access to local Plane database
+- [x] Explore Plane app - feature tour. Create mindmap
+- [x] Make a list of smoke tests to automate in Playwright
+- [x] Install Playwright and create test project structure
+- [x] Implement 2 smoke tests and POM [Page object models | Playwright](https://playwright.dev/docs/pom)
+- [x] Implement setup and use StorageState to speed up login action [Authentication | Playwright](https://playwright.dev/docs/auth), [Global setup and teardown | Playwright](https://playwright.dev/docs/test-global-setup-teardown)
+- [x] Implement remaining smoke tests (10)
+- [x] Implement visual testing
+- [x] Prepare a simplified Test Strategy
+- [ ] Create automation test plan
+- [x] Refactor tests using POM
+- [x] Refactor test for Dashboard using fixture
+- [x] Implement locators with prioritized user-facing attributes
+- [ ] Implement API testing / interactions
+- [ ] Create Azure CI/CD Pipeline for continuous testing
 - [ ] Add multiple environments
 - [ ] Parametrize and improve pipeline
 - [ ] Deploy Plane app using Azure services
 - [ ] Run full pipeline (build, deploy, test)
-
-Progress
-- [x] Clone Plane repo and launch application locally via Docker
-- [x] Install Dbeaver app and get access to local Plane database
-- [x] Explore Plane app - feature tour. Create mindmap 
-- [x] Make a list of smoke tests to automate in Playwright 
-- [x] Install Playwright and create test project structure
-- [x] Implement 2 smoke tests and POM
-- [x] Implement setup and use StorageState to speed up login action.
-- [x] Implement remaining smoke tests (10)
-- [x] Prepare a simplified Test Strategy
-- [x] Refactor tests using POM
-- [x] Refactor test for Dashboard using fixture
-- [ ] Refactor all tests: add hook, fixture, data
-- [ ] Create automation test plan
-- [ ] Automate tests Feature 1
-- [ ] Automate tests Feature 2
 - [ ] Manage state using API
-- [ ] Create Azure pipeline
 
 ## Installation
 
@@ -90,19 +83,12 @@ npm -i
 
 ## Run tests
 
-```
-npx npx playwright test
+```shell
+npx playwright test
+
 ```
 
 ## Resources
 
 1. [Introduction to Playwright](https://testautomationu.applitools.com/playwright-intro/)
 2. [Playwright](https://playwright.dev/docs/intro)
-
-## Concepts and techniques practiced  
-
-- [x] Page Object Model (POM) [Page object models | Playwright](https://playwright.dev/docs/pom)
-- [x] UI authentication using storageState() [Authentication | Playwright](https://playwright.dev/docs/auth)
-- [x] Global setup [Global setup and teardown | Playwright](https://playwright.dev/docs/test-global-setup-teardown)
-- [x] Using hooks and Dynamic Page Objects
-
