@@ -49,5 +49,4 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 
 ## 7. UI testing with Playwright Typescript
 
-- [code](./tests/e2e-playwright/e2e-testing.md)
-- [readme](./tests/README.md)
+- [readme](./tests/e2e-playwright/README.md)

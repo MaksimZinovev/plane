@@ -1,6 +1,7 @@
 import { type Page, type Locator, expect } from "@playwright/test";
 import { expectScreenshot } from "../../utils/utils";
-import { WORKSPACE_NAME, ISSUE_ID, PROJECT_PATH } from "../../../playwright.config";
+import { WORKSPACE_NAME, ISSUE_ID, PROJECT_PATH, PROJECT_ID } from "../../../playwright.config";
+import uiPages from "../../utils/uiPages";
 
 
 export class IssuePage {
@@ -29,7 +30,7 @@ export class IssuePage {
         workspaceName: string = this.workspaceName,
         issueId: string = ISSUE_ID
     ) {
-        await expect(this.page).toHaveURL(`./${workspaceName}/${PROJECT_PATH}/${issueId}`);
+        await expect(this.page).toHaveURL(`./${workspaceName}/${PROJECT_PATH}/${PROJECT_ID}/${uiPages.issues}/${issueId}`);
     }
     async checkIssueTitle() {
         await expect(this.issueTitle).toBeVisible();
