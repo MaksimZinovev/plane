@@ -41,6 +41,8 @@ This is ongoing project. I continue adding new chapters, tests and docs.
 
 ## 3. Risk Analysis
 
+- [Risk Analysis](https://github.com/MaksimZinovev/plane/tree/test-planning/tests/test-planning)
+
 ## 4. Exploratory testing
   
 ## 5. Unit testing
