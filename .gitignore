@@ -72,3 +72,4 @@ package-lock.json
 pnpm-lock.yaml
 pnpm-workspace.yaml
 .aider*
+tests/api-playwright/.gitignore

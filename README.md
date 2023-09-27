@@ -47,7 +47,9 @@ This is ongoing project. I continue adding new chapters, tests and docs.
   
 ## 5. Unit testing
 
-## 6. API testing with Postman
+## 6. API testing with Postman and Playwright
+
+- [readme](https://github.com/MaksimZinovev/plane/tree/api-playwright/tests/api-playwright)
 
 ## 7. UI testing with Playwright Typescript
 
