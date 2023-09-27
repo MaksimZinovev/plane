@@ -77,3 +77,6 @@ pnpm-workspace.yaml
 .aider*
 
 scratchpad/
+/test-results/
+/playwright-report/
+/playwright/.cache/
