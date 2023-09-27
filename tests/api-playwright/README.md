@@ -36,8 +36,8 @@ Progress
 - [x] Explore application APIs using Postman VS Code extension
 - [x] Install Playwright and create test project structure
 - [x] Implement one simple test
-- [ ] Refactor test by adding authentication
-- [ ] Refactor authentication using datafactory approach
+- [x] Refactor test by adding authentication
+- [ ] Refactor authentication using datafactory approach for authentication
 - [ ] Add better assertions
 - [ ] Add more smoke tests
 - [ ] Add more in-depth checks
