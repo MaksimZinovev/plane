@@ -11,7 +11,7 @@ test("GET users-me", async ({ request }) => {
     expect(response.status()).toBe(200);
 
     const body = await response.json();
-    // console.log(body);
+    // console.table(body.issues);
     
 
 });
